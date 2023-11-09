@@ -1,5 +1,345 @@
-/* Основные стили проекта. Это стили для темы, которую вы верстаете первой. */
-
 .page {
-  /* сохраните в разметке и стилях класс page. На его основе работает скрипт. */
+  margin: 0 auto;
+  padding: 10px;
+  color: var(--text-clr);
+  font-size: 18px;
+  background-image: var(--cover-image);
+  background-repeat: no-repeat;
+  background-position: top center;
+  background-size: cover;
+  background-attachment: fixed;
+}
+
+.header {
+  display: grid;
+  grid-template-rows: auto max-content auto;
+  align-items: center;
+}
+
+.rec-decor {
+  position: absolute;
+  z-index: -1;
+  visibility: var(--rec-decor-visibility, visible);
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
+  inset-inline-end: 10px;
+  inset-block-start: 0px;
+}
+
+.rec-decor::before {
+  content: "REC";
+  color: var(--accent-clr, #ff0070);
+  line-height: 25px;
+}
+
+.rec-decor::after {
+  content: "";
+  display: inline-block;
+  border-radius: 50%;
+  box-shadow: 0 0 2px 2px var(--accent-clr, #ff0070);
+  background: var(--accent-clr, #ff0070);
+  inline-size: 9px;
+  block-size: 9px;
+}
+
+.decorated-zone {
+  position: relative;
+  min-block-size: 97vh;
+}
+
+.decorated-zone::before {
+  content: "";
+  position: absolute;
+  border-top: 1px solid var(--decorative-bracket-clr);
+  border-right: 1px solid var(--decorative-bracket-clr);
+  inline-size: 25px;
+  block-size: 25px;
+  inset-inline-end: 0;
+  inset-block-start: 0;
+}
+
+.decorated-zone::after {
+  content: "";
+  position: absolute;
+  border-bottom: 1px solid var(--decorative-bracket-clr);
+  border-left: 1px solid var(--decorative-bracket-clr);
+  inline-size: 25px;
+  block-size: 25px;
+  inset-block-end: 0;
+}
+
+.header__theme-menu {
+  justify-self: end;
+  margin: 5px 0 0;
+}
+
+.header__theme-menu-list {
+  display: flex;
+  flex-direction: column;
+  gap: 13px;
+}
+
+.shadow-decor {
+  text-shadow: 2px 2px 0 var(--accent-clr, #ff0070);
+}
+
+.link {
+  text-decoration: none;
+}
+
+.link:hover {
+  text-decoration: underline;
+}
+
+.link:focus {
+  outline: 0;
+}
+
+.link:focus-visible {
+  outline: 1px solid currentColor;
+}
+
+.header__theme-menu-button {
+  border: none;
+  padding: 0 13px;
+  outline: 1px solid transparent;
+  color: var(--menu-clr);
+  text-transform: lowercase;
+  background-color: transparent;
+  transition-duration: 0.2s;
+  transition-property: outline;
+  cursor: pointer;
+}
+
+.header__theme-menu-button:hover {
+  outline: 1px solid var(--button-hover-clr);
+}
+
+.header__theme-menu-button:focus {
+  outline: none;
+}
+
+.header__theme-menu-button:focus-visible {
+  border-bottom: 1px solid var(--accent-clr);
+  outline: none;
+}
+
+.header__theme-menu-button_active {
+  outline: 1px solid var(--menu-clr);
+  pointer-events: none;
+}
+
+.header__heading {
+  align-self: self-start;
+  margin: 15px 0 0;
+  text-shadow: 4px 4px 0 var(--accent-clr);
+}
+
+.header__text {
+  justify-self: end;
+  margin: 0;
+  padding-right: 50px;
+  max-inline-size: 364px;
+}
+
+.section-why {
+  margin: 49px 0 0;
+}
+
+.section-what {
+  margin: 50px 0 0;
+}
+
+.section-how {
+  margin: 50px 0 0;
+}
+
+.section-how__list-heading {
+  margin: 0 0 20px;
+}
+
+.section-how__list-title {
+  font-weight: 400;
+}
+
+.gallery {
+  margin: 50px 0 47px;
+}
+
+.gallery__heading {
+  margin: 0;
+}
+
+.gallery-list {
+  display: grid;
+  gap: 10px;
+  margin: 20px 0 0;
+}
+
+.gallery-list__item-img {
+  display: block;
+  object-fit: cover;
+  object-position: center;
+  block-size: 100%;
+  inline-size: 100%;
+}
+
+.footer {
+  display: grid;
+}
+
+.footer__text {
+  justify-self: center;
+  align-self: center;
+  text-shadow: 2px 2px 0 var(--accent-clr);
+}
+
+.accented-shadow-text {
+  color: var(--accent-heading-clr);
+  font-weight: 700;
+  font-size: var(--accent-heading-fs-mobile);
+  line-height: 82.5%;
+}
+
+.accented-background {
+  color: var(--accent-clr-with-background);
+  background-color: var(--accent-clr);
+}
+
+.accented-text {
+  font-size: 18px;
+  line-height: 130%;
+}
+
+.accented-text_bold {
+  font-weight: 700;
+}
+
+.h2-heading {
+  margin: 0 0 20px;
+  color: var(--heading-clr);
+  font-weight: 700;
+  font-size: 18px;
+  line-height: 130%;
+}
+
+.accented-link {
+  text-decoration: none;
+  text-shadow: 2px 2px 0 var(--accent-clr);
+}
+
+.paragraph-text {
+  margin: 10px 0 20px;
+  line-height: 130%;
+}
+
+@media (min-width: 768px) {
+  .decorated-zone {
+    min-block-size: 96vh;
+  }
+
+  .header__theme-menu {
+    margin: 10px 0 0;
+  }
+
+  .header__heading {
+    margin: 20px 0 0 -20px;
+  }
+
+  .header__text {
+    margin: 0;
+  }
+
+  .section-why {
+    display: grid;
+    grid-template-columns: 236px 1fr;
+    column-gap: var(--gap);
+    margin: 81px 0 0;
+  }
+
+  .section-what {
+    margin: 60px 0 0;
+  }
+
+  .section-what__heading {
+    max-inline-size: 236px;
+  }
+
+  .section-how {
+    display: grid;
+    grid-template-columns: 236px 1fr;
+    column-gap: var(--gap);
+    margin: 80px 0 0;
+  }
+
+  .page {
+    padding: 20px;
+  }
+}
+
+@media (min-width: 1024px) {
+  .decorated-zone {
+    min-block-size: 94.7vh;
+  }
+
+  .header__theme-menu {
+    justify-self: center;
+    align-self: self-start;
+    margin: 0;
+  }
+
+  .header__theme-menu-list {
+    flex-direction: row;
+  }
+
+  .header__heading {
+    margin: 45px 0 0 -20px;
+  }
+
+  .header__text {
+    margin: 0;
+    padding: 0;
+    max-inline-size: 491px;
+  }
+
+  .section-why {
+    grid-template-columns: 314px 1fr;
+  }
+
+  .section-what__heading {
+    max-inline-size: 314px;
+  }
+
+  .section-what__list {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    column-gap: var(--gap);
+  }
+
+  .section-how {
+    grid-template-columns: 314px 1fr;
+    margin: 60px 0 0;
+  }
+
+  .accented-shadow-text {
+    font-size: var(--accent-heading-fs-desktop);
+  }
+}
+
+@media (width >= 768px) {
+  .gallery-list {
+    grid-template-columns: repeat(3, 1fr);
+    gap: 20px;
+  }
+
+  .gallery-list__item:first-child,
+  .gallery-list__item:last-child {
+    grid-column-start: span 2;
+  }
+
+  .gallery-list__item:nth-child(2),
+  .gallery-list__item:nth-child(3) {
+    grid-row-start: span 2;
+  }
 }
