@@ -8,6 +8,7 @@
   background-position: top center;
   background-size: cover;
   background-attachment: fixed;
+  padding-left: 0;
 }
 
 .header {
@@ -67,6 +68,7 @@
   inline-size: 25px;
   block-size: 25px;
   inset-block-end: 0;
+  margin: 0 0 0 10px;
 }
 
 .header__theme-menu {
@@ -132,11 +134,7 @@
 
 .header__heading {
   align-self: self-start;
-  margin: 15px 0 0;
   text-shadow: 4px 4px 0 var(--accent-clr);
-  display: block;
-  position: relative;
-  left: -2%;
 }
 
 .header__text {
@@ -144,10 +142,15 @@
   margin: 0;
   padding-right: 50px;
   max-inline-size: 364px;
+  margin: 10px;
 }
 
 .section-why {
   margin: 49px 0 0;
+}
+
+.section-why__list {
+  margin: 20px 0 0 10px;
 }
 
 .section-why__list-item {
@@ -158,6 +161,10 @@
   margin: 50px 0 0;
 }
 
+.section-what__list {
+  margin: 50px 0 0 10px;
+}
+
 .section-how {
   margin: 50px 0 0;
 }
@@ -166,12 +173,16 @@
   margin: 0 0 20px;
 }
 
+.section-how__list-container {
+  margin: 0 0 0 10px;
+}
+
 .section-how__list-title {
   font-weight: 400;
 }
 
 .gallery {
-  margin: 60px 0 47px;
+  margin: 50px 0 47px 10px;
 }
 
 .gallery__heading {
@@ -194,7 +205,7 @@
 
 .footer {
   display: grid;
-  margin: 80px 0 0;
+  margin: 30px 0 0;
 }
 
 .footer__text {
@@ -225,7 +236,7 @@
 }
 
 .h2-heading {
-  margin: 0 0 20px;
+  margin: 0 0 20px 10px;
   color: var(--heading-clr);
   font-weight: 700;
   font-size: 18px;
@@ -264,6 +275,10 @@
     margin: 0;
   }
 
+  .h2-heading {
+    margin: 0 0 20px 20px;
+}
+
   .section-why {
     display: grid;
     grid-template-columns: 236px 1fr;
@@ -273,6 +288,10 @@
 
   .section-what {
     margin: 60px 0 0;
+  }
+
+  .section-what__list {
+    margin: 60px 0 0 20px;
   }
 
   .section-what__heading {
@@ -287,8 +306,23 @@
   }
 
   .page {
-    padding: 20px;
+    padding: 20px 20px 20px 0;
   }
+
+  .decorated-zone::after {
+    content: "";
+    position: absolute;
+    border-bottom: 1px solid var(--decorative-bracket-clr);
+    border-left: 1px solid var(--decorative-bracket-clr);
+    inline-size: 25px;
+    block-size: 25px;
+    inset-block-end: 0;
+    margin: 0 0 0 20px;
+  }
+
+  .gallery {
+    margin: 50px 0 47px 20px;
+}
 }
 
 @media (min-width: 1024px) {
@@ -304,7 +338,7 @@
   .header__theme-menu {
     justify-self: center;
     align-self: self-start;
-    margin: 0;
+    margin: 0 0 0 90px;
   }
 
   .header__theme-menu-list {
@@ -333,6 +367,7 @@
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     column-gap: var(--gap);
+    margin: 0 0 0 20px;
   }
 
   .section-how {
